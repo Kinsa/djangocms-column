@@ -5,6 +5,9 @@ from django.utils.translation import ugettext_lazy as _
 from cms.models import CMSPlugin
 from cms.utils.compat.dj import python_2_unicode_compatible
 
+from djangocms_attributes_field.fields import AttributesField
+
+
 if hasattr(settings, "COLUMN_WIDTH_CHOICES"):
     WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES
 else:
@@ -30,6 +33,7 @@ class MultiColumns(CMSPlugin):
         parent_link=True,
         on_delete=models.CASCADE,
     )
+    attributes = AttributesField()
 
     def __str__(self):
         plugins = self.child_plugin_instances or []
@@ -53,6 +57,7 @@ class Column(CMSPlugin):
         parent_link=True,
         on_delete=models.CASCADE,
     )
+    attributes = AttributesField()
 
     def __str__(self):
         return u"%s" % self.get_width_display()
