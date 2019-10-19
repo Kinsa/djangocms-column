@@ -1,9 +1,13 @@
-THIS FORK OF DJANGOCMS-COLUMN INTEGRATES THE DJANGO CMS ATTRIBUTRES FIELD PLUGIN INTO THE COLUMNS
-
 djangocms-column
 ================
 
 A Multi Column Plugin for django CMS.
+
+
+This Fork
+---------
+
+This fork of djangocms-column utilizes djangocms-attributes-field to be able to apply attributes like classes to the columns.
 
 
 Installation
