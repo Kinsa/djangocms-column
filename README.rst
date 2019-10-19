@@ -9,7 +9,9 @@ Installation
 
 This plugin requires `django CMS` 3.4.5 or higher to be properly installed as well as the `django CMS Attributes Field` plugin.
 
-Install the django CMS Attributes Field plugin according to the [instructions](https://github.com/divio/djangocms-attributes-field). Then:
+Install the django CMS Attributes Field plugin according to the instructions: https://github.com/divio/djangocms-attributes-field
+
+Then:
 
 * In your projects virtualenv, run ``pip install git+https://github.com/Kinsa/djangocms-column.git``.
 * Add ``'djangocms_column'`` to your ``INSTALLED_APPS`` setting.
