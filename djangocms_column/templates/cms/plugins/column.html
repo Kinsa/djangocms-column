@@ -1,5 +1,5 @@
 {% load cms_tags %}
-<div class="column" style="width: {{ instance.width }}; float: left;">
+<div class="column" style="width: {{ instance.width }}; float: left;" {{ object.attributes_str }}>
 {% for plugin in instance.child_plugin_instances %}
     	{% render_plugin plugin %}
 {% endfor %}
