@@ -26,15 +26,17 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
 ]
 
 setup(
-    name='djangocms-column',
+    name='djangocms-column-kinsa',
     version=__version__,
-    description='Column Plugin for django CMS',
-    author='Divio AG',
-    author_email='info@divio.ch',
-    url='https://github.com/divio/djangocms-column',
+    description='Fork of Column Plugin for django CMS',
+    author='Kinsa Creative Incorporated, Divio AG',
+    author_email='joe@kinsa.us',
+    url='https://github.com/kinsa/djangocms-column',
     packages=[
         'djangocms_column',
         'djangocms_column.migrations',

@@ -1,5 +1,5 @@
 {% load cms_tags %}
-<div class="column{% for k,v in instance.attributes.items %}{% if k == 'class' %} {{ v }} {% endif %}{% endfor %}" style="width: {{ instance.width }}; float: left;{% for k,v in instance.attributes.items %}{% if k == 'style' %} {{ v }}; {% endif %}{% endfor %}" {{ instance.attributes_str }}>
+<div class="{{ instance.width }} column{% for k,v in instance.attributes.items %}{% if k == 'class' %} {{ v }} {% endif %}{% endfor %}" style="{% for k,v in instance.attributes.items %}{% if k == 'style' %} {{ v }}; {% endif %}{% endfor %}" {{ instance.attributes_str }}>
 {% for plugin in instance.child_plugin_instances %}
     	{% render_plugin plugin %}
 {% endfor %}
