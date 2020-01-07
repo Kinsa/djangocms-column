@@ -31,7 +31,7 @@ CLASSIFIERS = [
 ]
 
 setup(
-    name='djangocms-column-kinsa',
+    name='djangocms-column',
     version=__version__,
     description='Fork of Column Plugin for django CMS',
     author='Kinsa Creative Incorporated, Divio AG',
