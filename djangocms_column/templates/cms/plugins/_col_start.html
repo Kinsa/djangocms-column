@@ -1,5 +1,1 @@
-<div class="{{ width-cls }} column{% for k,v in instance.attributes.items %}{% if k == 'class' %} {{ v }} {% endif %}{% endfor %}" style="{% for k,v in instance.attributes.items %}{% if k == 'style' %} {{ v }}; {% endif %}{% endfor %}" {{ instance.attributes_str }}>
-{% for plugin in instance.child_plugin_instances %}
-        {% render_plugin plugin %}
-{% endfor %}
-</div>
+<div class="{{ width }} column{% for k,v in instance.attributes.items %}{% if k == 'class' %} {{ v }} {% endif %}{% endfor %}" style="{% for k,v in instance.attributes.items %}{% if k == 'style' %} {{ v }}; {% endif %}{% endfor %}" {{ instance.attributes_str }}>
