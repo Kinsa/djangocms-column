@@ -1,30 +1,20 @@
 {% load cms_tags %}
 {% if instance.width == '10%' %}
-    {% with col-10pct as width %}
-        {% include _column %}
-    {% endwith %}
-{% elif instance.widht == '25%' %}
-    {% with col-25pct as width %}
-        {% include _column %}
-    {% endwith %}
-{% elif instance.widht == '33%' %}
-    {% with col-33pct as width %}
-        {% include _column %}
-    {% endwith %}
-{% elif instance.widht == '50%' %}
-    {% with col-50pct as width %}
-        {% include _column %}
-    {% endwith %}
-{% elif instance.widht == '66%' %}
-    {% with col-66pct as width %}
-        {% include _column %}
-    {% endwith %}
-{% elif instance.widht == '75%' %}
-    {% with col-75pct as width %}
-        {% include _column %}
-    {% endwith %}
-{% elif instance.widht == '100%' %}
-    {% with col-100pct as width %}
-        {% include _column %}
-    {% endwith %}
+    {% include "./_col_start.html" with width="col-10pct" %}
+{% elif instance.width == '25%' %}
+    {% include "./_col_start.html" with width="col-25pct" %}
+{% elif instance.width == '33%' %}
+    {% include "./_col_start.html" with width="col-33pct" %}
+{% elif instance.width == '50%' %}
+    {% include "./_col_start.html" with width="col-50pct" %}
+{% elif instance.width == '66%' %}
+    {% include "./_col_start.html" with width="col-66pct" %}
+{% elif instance.width == '75%' %}
+    {% include "./_col_start.html" with width="col-75pct" %}
+{% elif instance.width == '100%' %}
+    {% include "./_col_start.html" with width="col-100pct" %}
 {% endif %}
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+</div>
