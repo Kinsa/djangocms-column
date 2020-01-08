@@ -12,13 +12,13 @@ if hasattr(settings, "COLUMN_WIDTH_CHOICES"):
     WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES
 else:
     WIDTH_CHOICES = (
-        ('10%', _("col-10pct")),
-        ('25%', _("col-25pct")),
-        ('33.33%', _('col-33pct')),
-        ('50%', _("col-50pct")),
-        ('66.66%', _('col-66pct')),
-        ('75%', _("col-75pct")),
-        ('100%', _('col-100pct')),
+        ('10%', _("10%")),
+        ('25%', _("25%")),
+        ('33.33%', _('33%')),
+        ('50%', _("50%")),
+        ('66.66%', _('66%')),
+        ('75%', _("75%")),
+        ('100%', _('100%')),
     )
 
 

@@ -1,6 +1,30 @@
 {% load cms_tags %}
-<div class="{{ instance.width }} column{% for k,v in instance.attributes.items %}{% if k == 'class' %} {{ v }} {% endif %}{% endfor %}" style="{% for k,v in instance.attributes.items %}{% if k == 'style' %} {{ v }}; {% endif %}{% endfor %}" {{ instance.attributes_str }}>
-{% for plugin in instance.child_plugin_instances %}
-    	{% render_plugin plugin %}
-{% endfor %}
-</div>
+{% if instance.width == '10%' %}
+    {% with col-10pct as width %}
+        {% include _column %}
+    {% endwith %}
+{% elif instance.widht == '25%' %}
+    {% with col-25pct as width %}
+        {% include _column %}
+    {% endwith %}
+{% elif instance.widht == '33%' %}
+    {% with col-33pct as width %}
+        {% include _column %}
+    {% endwith %}
+{% elif instance.widht == '50%' %}
+    {% with col-50pct as width %}
+        {% include _column %}
+    {% endwith %}
+{% elif instance.widht == '66%' %}
+    {% with col-66pct as width %}
+        {% include _column %}
+    {% endwith %}
+{% elif instance.widht == '75%' %}
+    {% with col-75pct as width %}
+        {% include _column %}
+    {% endwith %}
+{% elif instance.widht == '100%' %}
+    {% with col-100pct as width %}
+        {% include _column %}
+    {% endwith %}
+{% endif %}
