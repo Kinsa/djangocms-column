@@ -20,6 +20,7 @@ WIDTH_CHOICES = (
 )
 
 XS_WIDTH_CHOICES = (
+    ('', '--'),
     ('col-xs-10pct', _("10%")),
     ('col-xs-25pct', _("25%")),
     ('col-xs-33pct', _('33%')),
@@ -80,6 +81,7 @@ class Column(CMSPlugin):
         choices=XS_WIDTH_CHOICES,
         default=XS_WIDTH_CHOICES[0][0],
         max_length=50,
+        blank=True,
     )
     width = models.CharField(
         _("small width (>= 768px)"),

@@ -86,6 +86,43 @@ Add to your CSS::
       float: left;
     }
 
+    .col-sm-10pct,
+    .col-sm-25pct,
+    .col-sm-33pct,
+    .col-sm-50pct,
+    .col-sm-66pct,
+    .col-sm-75pct {
+      float: left;
+    }
+
+    .col-sm-10pct {
+      width: 10%;
+    }
+    
+    .col-sm-25pct {
+      width: 25%;
+    }
+    
+    .col-sm-33pct {
+      width: 33%;
+    }
+    
+    .col-sm-50pct {
+      width: 50%;
+    }
+    
+    .col-sm-66pct {
+      width: 66%;
+    }
+    
+    .col-sm-75pct {
+      width: 75%;
+    }
+    
+    .col-sm-100pct {
+      width: 100%;
+    }
+
     @media screen and (max-width: 767px) {
       .col-xs-10pct,
       .col-xs-25pct,
@@ -121,45 +158,6 @@ Add to your CSS::
       }
       
       .col-xs-100pct {
-        width: 100%;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      .col-sm-10pct,
-      .col-sm-25pct,
-      .col-sm-33pct,
-      .col-sm-50pct,
-      .col-sm-66pct,
-      .col-sm-75pct {
-        float: left;
-      }
-
-      .col-sm-10pct {
-        width: 10%;
-      }
-      
-      .col-sm-25pct {
-        width: 25%;
-      }
-      
-      .col-sm-33pct {
-        width: 33%;
-      }
-      
-      .col-sm-50pct {
-        width: 50%;
-      }
-      
-      .col-sm-66pct {
-        width: 66%;
-      }
-      
-      .col-sm-75pct {
-        width: 75%;
-      }
-      
-      .col-sm-100pct {
         width: 100%;
       }
     }
