@@ -21,6 +21,39 @@ else:
         ('100%', _('100%')),
     )
 
+    XS_WIDTH_CHOICES = (
+        ('', '--'),
+        ('col-xs-10pct', _("10%")),
+        ('col-xs-25pct', _("25%")),
+        ('col-xs-33pct', _('33%')),
+        ('col-xs-50pct', _("50%")),
+        ('col-xs-66pct', _('66%')),
+        ('col-xs-75pct', _("75%")),
+        ('col-xs-100pct', _('100%')),
+    )
+
+    MD_WIDTH_CHOICES = (
+        ('', '--'),
+        ('col-md-10pct', _("10%")),
+        ('col-md-25pct', _("25%")),
+        ('col-md-33pct', _('33%')),
+        ('col-md-50pct', _("50%")),
+        ('col-md-66pct', _('66%')),
+        ('col-md-75pct', _("75%")),
+        ('col-md-100pct', _('100%')),
+    )
+
+    LG_WIDTH_CHOICES = (
+        ('', '--'),
+        ('col-lg-10pct', _("10%")),
+        ('col-lg-25pct', _("25%")),
+        ('col-lg-33pct', _('33%')),
+        ('col-lg-50pct', _("50%")),
+        ('col-lg-66pct', _('66%')),
+        ('col-lg-75pct', _("75%")),
+        ('col-lg-100pct', _('100%')),
+    )
+
 
 @python_2_unicode_compatible
 class MultiColumns(CMSPlugin):
@@ -45,11 +78,35 @@ class Column(CMSPlugin):
     """
     A Column for the MultiColumns Plugin
     """
+    width_xs = models.CharField(
+        _("extra small width (< 768px)"),
+        choices=XS_WIDTH_CHOICES,
+        default=XS_WIDTH_CHOICES[0][0],
+        max_length=50,
+        null=True,
+        blank=True,
+    )
     width = models.CharField(
-        _("width"),
+        _("small width (>= 768px)"),
         choices=WIDTH_CHOICES,
         default=WIDTH_CHOICES[0][0],
         max_length=50
+    )
+    width_md = models.CharField(
+        _("medium width (>= 992px)"),
+        choices=MD_WIDTH_CHOICES,
+        default=MD_WIDTH_CHOICES[0][0],
+        max_length=50,
+        null=True,
+        blank=True,
+    )
+    width_lg = models.CharField(
+        _("medium width (>= 1200px)"),
+        choices=LG_WIDTH_CHOICES,
+        default=LG_WIDTH_CHOICES[0][0],
+        max_length=50,
+        null=True,
+        blank=True,
     )
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
