@@ -21,8 +21,10 @@ else:
         ('100%', _('100%')),
     )
 
+if hasattr(settings, "COLUMN_WIDTH_CHOICES_XS"):
+    XS_WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES_XS
+else:
     XS_WIDTH_CHOICES = (
-        ('', '--'),
         ('col-xs-10pct', _("10%")),
         ('col-xs-25pct', _("25%")),
         ('col-xs-33pct', _('33%')),
@@ -32,6 +34,9 @@ else:
         ('col-xs-100pct', _('100%')),
     )
 
+if hasattr(settings, "COLUMN_WIDTH_CHOICES_MD"):
+    MD_WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES_MD
+else:
     MD_WIDTH_CHOICES = (
         ('', '--'),
         ('col-md-10pct', _("10%")),
@@ -43,6 +48,9 @@ else:
         ('col-md-100pct', _('100%')),
     )
 
+if hasattr(settings, "COLUMN_WIDTH_CHOICES_LG"):
+    LG_WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES_LG
+else:
     LG_WIDTH_CHOICES = (
         ('', '--'),
         ('col-lg-10pct', _("10%")),
@@ -83,8 +91,6 @@ class Column(CMSPlugin):
         choices=XS_WIDTH_CHOICES,
         default=XS_WIDTH_CHOICES[0][0],
         max_length=50,
-        null=True,
-        blank=True,
     )
     width = models.CharField(
         _("small width (>= 768px)"),
@@ -97,7 +103,6 @@ class Column(CMSPlugin):
         choices=MD_WIDTH_CHOICES,
         default=MD_WIDTH_CHOICES[0][0],
         max_length=50,
-        null=True,
         blank=True,
     )
     width_lg = models.CharField(
@@ -105,7 +110,6 @@ class Column(CMSPlugin):
         choices=LG_WIDTH_CHOICES,
         default=LG_WIDTH_CHOICES[0][0],
         max_length=50,
-        null=True,
         blank=True,
     )
     cmsplugin_ptr = models.OneToOneField(

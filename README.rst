@@ -28,65 +28,212 @@ Usage
 -----
 
 There are 2 plugins: MultiColumn and Column
+
 The first is MultiColumn that should be added to your placeholder conf.
+
 MultiColumn only allows one plugin as a child: the Column plugin.
-The Column plugin has a parameter width. With this parameter you can control the width
+
+The Column plugin has parameters for width. With these parameter you can control the width
 of the column via classes.
 
-You can add a new setting to your settings.py called `COLUMN_WIDTH_CHOICES`
+The columns are built using flexbox and will display as a row. This is important to note -- a column set to 100% width adjacent to another column will not fill out the whole space but will follow the rules of flexbox, taking up 100% of the remaining space after the other column, so that two columns set to 100% width will actually take up 50% of the parent.
 
-the default is::
+There are 4 breakpoints, XS and SM are required, MD and LG are optional. The breakpoints are:
 
-	COLUMN_WIDTH_CHOICES = (
-        ('10%', _("10%")),
-        ('25%', _("25%")),
-        ('33.33%', _('33%')),
-        ('50%', _("50%")),
-        ('66.66%', _('66%')),
-        ('75%', _("75%")),
-        ('100%', _('100%')),
-	)
+* xs: < 768px
+* sm: >= 768px
+* md: >= 992px
+* lg: >= 1200px
 
-but you can change that to fit your CSS grid framework or other purposes.
 
 Add to your CSS::
 
-    .col-10pct,
-    .col-25pct,
-    .col-33pct,
-    .col-50pct,
-    .col-66pct,
-    .col-75pct,
-    .col-100pct {
+    /* responsive multi-column layout */
+
+    /*
+
+     * -xs- : < 768px
+     * -sm- : >= 768px
+     * -md- : >= 992px
+     * -lg- : >= 1200px
+
+    */
+
+    .col-sm-10pct,
+    .col-sm-25pct,
+    .col-sm-33pct,
+    .col-sm-50pct,
+    .col-sm-66pct,
+    .col-sm-75pct,
+    .col-md-10pct,
+    .col-md-25pct,
+    .col-md-33pct,
+    .col-md-50pct,
+    .col-md-66pct,
+    .col-md-75pct,
+    .col-lg-10pct,
+    .col-lg-25pct,
+    .col-lg-33pct,
+    .col-lg-50pct,
+    .col-lg-66pct,
+    .col-lg-75pct {
       float: left;
     }
 
-    .col-10pct {
-      width: 10%;
+    @media screen and (max-width: 767px) {
+      .col-xs-10pct,
+      .col-xs-25pct,
+      .col-xs-33pct,
+      .col-xs-50pct,
+      .col-xs-66pct,
+      .col-xs-75pct {
+        float: left;
+      }
+
+      .col-xs-10pct {
+        width: 10%;
+      }
+      
+      .col-xs-25pct {
+        width: 25%;
+      }
+      
+      .col-xs-33pct {
+        width: 33%;
+      }
+      
+      .col-xs-50pct {
+        width: 50%;
+      }
+      
+      .col-xs-66pct {
+        width: 66%;
+      }
+      
+      .col-xs-75pct {
+        width: 75%;
+      }
+      
+      .col-xs-100pct {
+        width: 100%;
+      }
     }
 
-    .col-25pct {
-      width: 25%;
+    @media screen and (min-width: 768px) {
+      .col-sm-10pct,
+      .col-sm-25pct,
+      .col-sm-33pct,
+      .col-sm-50pct,
+      .col-sm-66pct,
+      .col-sm-75pct {
+        float: left;
+      }
+
+      .col-sm-10pct {
+        width: 10%;
+      }
+      
+      .col-sm-25pct {
+        width: 25%;
+      }
+      
+      .col-sm-33pct {
+        width: 33%;
+      }
+      
+      .col-sm-50pct {
+        width: 50%;
+      }
+      
+      .col-sm-66pct {
+        width: 66%;
+      }
+      
+      .col-sm-75pct {
+        width: 75%;
+      }
+      
+      .col-sm-100pct {
+        width: 100%;
+      }
     }
 
-    .col-33pct {
-      width: 33%;
+    @media screen and (min-width: 992px) {
+      .col-md-10pct,
+      .col-md-25pct,
+      .col-md-33pct,
+      .col-md-50pct,
+      .col-md-66pct,
+      .col-md-75pct {
+        float: left;
+      }
+
+      .col-md-10pct {
+        width: 10%;
+      }
+      
+      .col-md-25pct {
+        width: 25%;
+      }
+      
+      .col-md-33pct {
+        width: 33%;
+      }
+      
+      .col-md-50pct {
+        width: 50%;
+      }
+      
+      .col-md-66pct {
+        width: 66%;
+      }
+      
+      .col-md-75pct {
+        width: 75%;
+      }
+      
+      .col-md-100pct {
+        width: 100%;
+      }
     }
 
-    .col-50pct {
-      width: 50%;
-    }
+    @media screen and (min-width: 1200px) {
+      .col-lg-10pct,
+      .col-lg-25pct,
+      .col-lg-33pct,
+      .col-lg-50pct,
+      .col-lg-66pct,
+      .col-lg-75pct {
+        float: left;
+      }
 
-    .col-66pct {
-      width: 66%;
-    }
-
-    .col-75pct {
-      width: 75%;
-    }
-
-    .col-100pct {
-      width: 100%;
+      .col-lg-10pct {
+        width: 10%;
+      }
+      
+      .col-lg-25pct {
+        width: 25%;
+      }
+      
+      .col-lg-33pct {
+        width: 33%;
+      }
+      
+      .col-lg-50pct {
+        width: 50%;
+      }
+      
+      .col-lg-66pct {
+        width: 66%;
+      }
+      
+      .col-lg-75pct {
+        width: 75%;
+      }
+      
+      .col-lg-100pct {
+        width: 100%;
+      }
     }
 
 
