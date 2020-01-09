@@ -9,6 +9,12 @@ This Fork
 
 This fork of djangocms-column utilizes djangocms-attributes-field to be able to apply attributes like classes to the columns.
 
+It also allows for the setting of different column widths based on the screen width with breakpoints at <768px, >=768px, >=992px, and >=1200px.
+
+It no longer allows setting column widths in the Django settings file but maintains backwards compatibility with the default column width values.
+
+It requires adding CSS for the columns (referenced below) and removes the inline style application of width and float.
+
 
 Installation
 ------------
