@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -8,59 +7,49 @@ from cms.utils.compat.dj import python_2_unicode_compatible
 from djangocms_attributes_field.fields import AttributesField
 
 
-if hasattr(settings, "COLUMN_WIDTH_CHOICES"):
-    WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES
-else:
-    WIDTH_CHOICES = (
-        ('10%', _("10%")),
-        ('25%', _("25%")),
-        ('33.33%', _('33%')),
-        ('50%', _("50%")),
-        ('66.66%', _('66%')),
-        ('75%', _("75%")),
-        ('100%', _('100%')),
-    )
+# preserves backwards compatibility with old column values
+# this is no longer editable in settings; the values are referenced in the template as well and used to set a class to match
+WIDTH_CHOICES = (
+    ('10%', _("10%")),
+    ('25%', _("25%")),
+    ('33.33%', _('33%')),
+    ('50%', _("50%")),
+    ('66.66%', _('66%')),
+    ('75%', _("75%")),
+    ('100%', _('100%')),
+)
 
-if hasattr(settings, "COLUMN_WIDTH_CHOICES_XS"):
-    XS_WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES_XS
-else:
-    XS_WIDTH_CHOICES = (
-        ('col-xs-10pct', _("10%")),
-        ('col-xs-25pct', _("25%")),
-        ('col-xs-33pct', _('33%')),
-        ('col-xs-50pct', _("50%")),
-        ('col-xs-66pct', _('66%')),
-        ('col-xs-75pct', _("75%")),
-        ('col-xs-100pct', _('100%')),
-    )
+XS_WIDTH_CHOICES = (
+    ('col-xs-10pct', _("10%")),
+    ('col-xs-25pct', _("25%")),
+    ('col-xs-33pct', _('33%')),
+    ('col-xs-50pct', _("50%")),
+    ('col-xs-66pct', _('66%')),
+    ('col-xs-75pct', _("75%")),
+    ('col-xs-100pct', _('100%')),
+)
 
-if hasattr(settings, "COLUMN_WIDTH_CHOICES_MD"):
-    MD_WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES_MD
-else:
-    MD_WIDTH_CHOICES = (
-        ('', '--'),
-        ('col-md-10pct', _("10%")),
-        ('col-md-25pct', _("25%")),
-        ('col-md-33pct', _('33%')),
-        ('col-md-50pct', _("50%")),
-        ('col-md-66pct', _('66%')),
-        ('col-md-75pct', _("75%")),
-        ('col-md-100pct', _('100%')),
-    )
+MD_WIDTH_CHOICES = (
+    ('', '--'),
+    ('col-md-10pct', _("10%")),
+    ('col-md-25pct', _("25%")),
+    ('col-md-33pct', _('33%')),
+    ('col-md-50pct', _("50%")),
+    ('col-md-66pct', _('66%')),
+    ('col-md-75pct', _("75%")),
+    ('col-md-100pct', _('100%')),
+)
 
-if hasattr(settings, "COLUMN_WIDTH_CHOICES_LG"):
-    LG_WIDTH_CHOICES = settings.COLUMN_WIDTH_CHOICES_LG
-else:
-    LG_WIDTH_CHOICES = (
-        ('', '--'),
-        ('col-lg-10pct', _("10%")),
-        ('col-lg-25pct', _("25%")),
-        ('col-lg-33pct', _('33%')),
-        ('col-lg-50pct', _("50%")),
-        ('col-lg-66pct', _('66%')),
-        ('col-lg-75pct', _("75%")),
-        ('col-lg-100pct', _('100%')),
-    )
+LG_WIDTH_CHOICES = (
+    ('', '--'),
+    ('col-lg-10pct', _("10%")),
+    ('col-lg-25pct', _("25%")),
+    ('col-lg-33pct', _('33%')),
+    ('col-lg-50pct', _("50%")),
+    ('col-lg-66pct', _('66%')),
+    ('col-lg-75pct', _("75%")),
+    ('col-lg-100pct', _('100%')),
+)
 
 
 @python_2_unicode_compatible
