@@ -84,7 +84,7 @@ class Column(CMSPlugin):
         blank=True,
     )
     width = models.CharField(
-        _("small width (>= 768px)"),
+        _("small width (>= 768px if xs is set)"),
         choices=WIDTH_CHOICES,
         default=WIDTH_CHOICES[0][0],
         max_length=50
@@ -97,7 +97,7 @@ class Column(CMSPlugin):
         blank=True,
     )
     width_lg = models.CharField(
-        _("medium width (>= 1200px)"),
+        _("large width (>= 1200px)"),
         choices=LG_WIDTH_CHOICES,
         default=LG_WIDTH_CHOICES[0][0],
         max_length=50,
