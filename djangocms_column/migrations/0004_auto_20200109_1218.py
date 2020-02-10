@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='column',
             name='width_lg',
-            field=models.CharField(blank=True, choices=[('', '--'), ('col-lg-10pct', '10%'), ('col-lg-25pct', '25%'), ('col-lg-33pct', '33%'), ('col-lg-50pct', '50%'), ('col-lg-66pct', '66%'), ('col-lg-75pct', '75%'), ('col-lg-100pct', '100%')], default='', max_length=50, verbose_name='medium width (>= 1200px)'),
+            field=models.CharField(blank=True, choices=[('', '--'), ('col-lg-10pct', '10%'), ('col-lg-25pct', '25%'), ('col-lg-33pct', '33%'), ('col-lg-50pct', '50%'), ('col-lg-66pct', '66%'), ('col-lg-75pct', '75%'), ('col-lg-100pct', '100%')], default='', max_length=50, verbose_name='large width (>= 1200px)'),
         ),
         migrations.AddField(
             model_name='column',
@@ -30,6 +30,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='column',
             name='width',
-            field=models.CharField(choices=[('10%', '10%'), ('25%', '25%'), ('33.33%', '33%'), ('50%', '50%'), ('66.66%', '66%'), ('75%', '75%'), ('100%', '100%')], default='10%', max_length=50, verbose_name='small width (>= 768px)'),
+            field=models.CharField(choices=[('10%', '10%'), ('25%', '25%'), ('33.33%', '33%'), ('50%', '50%'), ('66.66%', '66%'), ('75%', '75%'), ('100%', '100%')], default='10%', max_length=50, verbose_name='small width (>= 768px if xs is set)'),
         ),
     ]
