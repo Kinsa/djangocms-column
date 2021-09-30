@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 from six import python_2_unicode_compatible
 
 from django.conf import settings
->>>>>>> 416094240e00a60bcec47182a776237ff3a78591
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
