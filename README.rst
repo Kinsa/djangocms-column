@@ -15,6 +15,18 @@ It no longer allows setting column widths in the Django settings file but mainta
 
 It requires adding CSS for the columns (referenced below) and removes the inline style application of width and float.
 
+*Development*
+
+(First time only) add divio as a remote
+
+$ git remote add divio git@github.com:divio/djangocms-column.git    
+
+Checkout the develop branch, pull divio
+
+$ git checkout develop
+$ git pull divio master
+
+Resolve any conflicts, merge back onto master, update version in settings, tag, push
 
 Installation
 ------------
