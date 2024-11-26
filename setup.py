@@ -36,7 +36,7 @@ setup(
     version=__version__,
     description='Fork of Column Plugin for django CMS',
     author='Kinsa Creative Incorporated, Divio AG',
-    author_email='joe@kinsa.us',
+    author_email='enquiries@kinsa.cc',
     url='https://github.com/kinsa/djangocms-column',
     packages=[
         'djangocms_column',
